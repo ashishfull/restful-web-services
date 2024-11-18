@@ -1,0 +1,5 @@
+package com.ashishrai.rest.webservices.user.exception;
+
+public class ErrorDetails {
+
+}

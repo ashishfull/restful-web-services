@@ -1,0 +1,6 @@
+package com.ashishrai.rest.webservices.user;
+
+@Component
+public class UserDaoService {
+
+}

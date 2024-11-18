@@ -1,0 +1,20 @@
+package com.ashishrai.rest.webservices.user;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserResource {
+
+	private UserDaoService service;
+
+	public UserResource(UserDaoService service) {
+		this.service = service;
+	}
+
+	public List<User> retrieveAllUser() {
+		return service.findAll();
+	}
+
+}

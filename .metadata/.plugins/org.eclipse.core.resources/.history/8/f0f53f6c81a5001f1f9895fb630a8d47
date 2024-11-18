@@ -1,0 +1,6 @@
+package com.ashishrai.rest.webservices.user;
+
+public class UserNotFoundException extends Exception {
+	private String message;
+	
+}

@@ -1,0 +1,42 @@
+package com.ashishrai.rest.webservices.user;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserResource {
+
+	private UserDaoService service;
+
+	public UserResource(UserDaoService service) {
+		this.service = service;
+	}
+
+	@GetMapping("/users")
+	public List<User> retrieveAllUser() {
+		return service.findAll();
+	}
+
+	@GetMapping("/users/{id}")
+	public ResponseEntity<User> retrieveUser(@PathVariable Integer id) {
+		
+		try {
+			User user = service.findById(id);
+			return ResponseEntity.ok(user);
+		} catch (UserNotFoundException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@ExceptionHandler
+	public ResponseEntity<String> handleUserNotFoundException(UserNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + ex.getMessage()); // HTTP 400
+    }
+
+}

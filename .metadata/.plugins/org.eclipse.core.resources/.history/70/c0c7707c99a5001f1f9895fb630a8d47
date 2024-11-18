@@ -1,0 +1,22 @@
+package com.ashishrai.rest.webservices.user.exception;
+
+import java.time.LocalDate;
+
+public class ErrorDetails {
+	private LocalDate time;
+	private String message;
+	private String details;
+
+	public ErrorDetails(LocalDate time, String message, String details) {
+		super();
+		this.time = time;
+		this.message = message;
+		this.details = details;
+	}
+
+	@Override
+	public String toString() {
+		return "ErrorDetails [time=" + time + ", message=" + message + ", details=" + details + "]";
+	}
+
+}
