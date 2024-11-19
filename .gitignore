@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Workspace Specific files to be ignored ###
+.metadata/
+.sonarlint/
+*.log
+*.class
+target/
+bin/
+out/
