@@ -3,6 +3,9 @@ package com.ashishrai.rest.webservices.user;
 import java.net.URI;
 import java.util.List;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +31,14 @@ public class UserResource {
 		return service.findAll();
 	}
 
+	// Example for HATEOAS, binding link to retrieveAllUser in response with the created user
 	@GetMapping("/users/{id}")
-	public ResponseEntity<User> retrieveUser(@PathVariable Integer id) {
+	public ResponseEntity<EntityModel<User>> retrieveUser(@PathVariable Integer id) {
 		User user = service.findById(id);
-		return ResponseEntity.ok(user);
-
+		EntityModel<User> entityModel = EntityModel.of(user);
+		WebMvcLinkBuilder link = linkTo(methodOn(this.getClass()).retrieveAllUser());
+		entityModel.add(link.withRel("all-users"));
+		return ResponseEntity.ok(entityModel);
 	}
 
 	@DeleteMapping("/users/{id}")
