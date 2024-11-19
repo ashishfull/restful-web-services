@@ -1,7 +1,0 @@
-package com.ashishrai.rest.webservices.user.exception;
-
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
-
-}

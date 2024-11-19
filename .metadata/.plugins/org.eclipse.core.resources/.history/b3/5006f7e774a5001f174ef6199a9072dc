@@ -1,9 +1,0 @@
-package com.ashishrai.rest.webservices.helloworld;
-
-public class HelloWorldBean {
-
-	public HelloWorldBean(String message) {
-		// TODO Auto-generated constructor stub
-	}
-	
-}
