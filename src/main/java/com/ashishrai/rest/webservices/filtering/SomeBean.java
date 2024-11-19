@@ -1,9 +1,12 @@
 
 package com.ashishrai.rest.webservices.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties({ "field1", "field2" })
+// ignores fields mentioned in the array
+// during Jackson conversion while sending API response
+// @JsonIgnoreProperties({ "field1", "field2" })
+@JsonFilter("SomeBeanFilter") // Dynamic filtering, specific to a rest API
 public class SomeBean {
 
 	private String field1;
