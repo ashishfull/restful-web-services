@@ -69,3 +69,8 @@ This project demonstrates the implementation of various REST API features using 
 - **Implementation Highlights:**
   - Used the Spring Security starter dependency.
   - Configured basic authentication with username and password.
+ 
+## Version
+```yaml
+This version is compact, clean, and easy to copy-paste directly into your project. Let me know if you need any tweaks! 😊
+```
