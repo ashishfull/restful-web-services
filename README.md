@@ -69,6 +69,57 @@ This project demonstrates the implementation of various REST API features using 
 - **Implementation Highlights:**
   - Used the Spring Security starter dependency.
   - Configured basic authentication with username and password.
+
+ ## Project Structure
+```bash
+├── README.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── ashishrai
+│   │   │           └── rest
+│   │   │               └── webservices
+│   │   │                   ├── RestfulWebServicesApplication.java
+│   │   │                   ├── filtering
+│   │   │                   │   ├── FilteringController.java
+│   │   │                   │   └── SomeBean.java
+│   │   │                   ├── helloworld
+│   │   │                   │   ├── HelloWorldBean.java
+│   │   │                   │   └── HelloWorldController.java
+│   │   │                   ├── person
+│   │   │                   │   ├── PersonController.java
+│   │   │                   │   └── records
+│   │   │                   │       ├── Name.java
+│   │   │                   │       ├── PersonV1.java
+│   │   │                   │       └── PersonV2.java
+│   │   │                   ├── security
+│   │   │                   │   └── SpringSecurityConfiguration.java
+│   │   │                   └── user
+│   │   │                       ├── User.java
+│   │   │                       ├── UserDaoService.java
+│   │   │                       ├── UserNotFoundException.java
+│   │   │                       ├── UserResource.java
+│   │   │                       └── exception
+│   │   │                           ├── CustomResponseEntityExceptionHandler.java
+│   │   │                           └── ErrorDetails.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── data.sql
+│   │       ├── messages.properties
+│   │       ├── messages_hi.properties
+│   │       └── messages_nl.properties
+│   └── test
+│       └── java
+│           └── com
+│               └── ashishrai
+│                   └── rest
+│                       └── webservices
+│                           └── RestfulWebServicesApplicationTests.java
+```
  
 ## Version
 ```yaml
